@@ -17,8 +17,10 @@
             <Label Content="Title" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075" Margin="0,5"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Label x:Name="lblScore" Width="500" Content="Score: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-1200 0 0 0"/>
-            <Image Width="200" Height="200" Source="/Icons/placeholder1.png" />
+            <Label x:Name="lblScore" Width="500" Content="Score: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label x:Name="lblTime" Width="500" Content="Time: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <!--<Image Width="200" Height="200" Source="/Icons/placeholder1.png" />-->
+            <Label x:Name="lblTimeNow" Width="500" Content="TimeNow: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
         </StackPanel>
         <StackPanel Grid.Row="2">
