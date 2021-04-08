@@ -30,12 +30,14 @@ namespace Geek
         }
 
        
-
-        Score score = new Score();
-        DispatcherTimer timer = new DispatcherTimer();
-        bool ongoingTask = false;
-        bool loosed = false;
-        int maxTime = 60;
+        
+        Score score = new Score(); //initialization of class Score
+        DispatcherTimer timer = new DispatcherTimer();//initialization of class DispatcherTimer
+        bool ongoingTask = false; //task is not in progress
+        bool loosed = false; //
+        int maxTime = 60; //time in seconds per one task
+        
+        
         private void Accept_Click(object sender, RoutedEventArgs e)
         {   
 
@@ -62,7 +64,7 @@ namespace Geek
                     lblScore.Content = "Score: " + score.points;
                     lblTxt.Content = "Ups!";
                     HeartControl();
-                    if(!heart3.IsVisible)
+                    if(loosed)
                     {
                         lblTxt.Content = "Looser!";
                     }
@@ -81,8 +83,8 @@ namespace Geek
             if(!ongoingTask && !loosed)
             {
                 Random rnd = new Random();
-                int number1 = rnd.Next(-100,101);
-                int number2 = rnd.Next(-100, 101);
+                double number1 = rnd.Next(-100,101);
+                double number2 = rnd.Next(-100, 101);
                 int operation = rnd.Next(0, 4);
                 double result = 0;
                 switch (operation)
@@ -100,8 +102,15 @@ namespace Geek
                         lblTxt.Content = number1 + " * " + number2 + " = " + result;
                         break;
                     case 3:
+                        while(number2 == 0)
+                        {
+                            number2 = rnd.Next(-100, 101);
+                        }
                         result = number1 / number2;
                         lblTxt.Content = number1 + " / " + number2 + " = " + result;
+                        break;
+                    default:
+                        number2 = 1;
                         break;
 
                 }
@@ -158,5 +167,42 @@ namespace Geek
 
             }
         }
+
+        /*private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (ongoingTask)
+                {
+                    timer.Stop();
+                    ongoingTask = false;
+
+                    DateTime dateTime = DateTime.Now;
+                    TimeSpan resultTime = dateTime.Subtract(score.time);
+                    double currentTime = resultTime.TotalSeconds;
+                    lblTime.Content = "Time: " + (int)currentTime + "s";
+                    if (tbResult.Text == score.result.ToString() && currentTime <= maxTime)
+                    {
+                        score.mulip = 2 - (currentTime / maxTime * 2);
+                        score.points += (int)(10 * score.mulip);
+                        lblScore.Content = "Score: " + score.points;
+                        lblTxt.Content = "Good!";
+                    }
+                    else
+                    {
+                        score.mulip = 2 - (currentTime / maxTime * 2);
+                        score.points -= (int)(10 * score.mulip);
+                        lblScore.Content = "Score: " + score.points;
+                        lblTxt.Content = "Ups!";
+                        HeartControl();
+                        if (!heart3.IsVisible)
+                        {
+                            lblTxt.Content = "Looser!";
+                        }
+                    }
+
+                }
+            }
+        }*/
     }
 }

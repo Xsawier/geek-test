@@ -5,22 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geek"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920" MinHeight="1080" MinWidth="1920"  WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowState="Maximized" >
-    <Grid  Background="#326bed">
+        Title="MainWindow" WindowStyle="None"  Height="1080" Width="1920" MinHeight="1080" MinWidth="1920"  WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowState="Maximized" >
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF326BED"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Style="{DynamicResource Quicksand}" Content="Geek" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075" Margin="0,5"/>
+
+        <StackPanel Orientation="Horizontal" Width="1920" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Center">
+
+            <Label Margin="10 0 0 0" Style="{DynamicResource Quicksand}" Content="Geek" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075"/>
+            <Button Style="{DynamicResource ButtonRound}" Margin="1660 0 0 0" Width="50" Height="50" BorderBrush="#00707070" Foreground="#00707070">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/cancel.png" Stretch="Uniform" />
+                </Button.Background>
+            </Button>
         </StackPanel>
+
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Label x:Name="lblScore" Width="500" Content="Score: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-            <Label x:Name="lblTime" Width="500" Content="Time: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Style="{DynamicResource Quicksand}"  x:Name="lblScore" Width="500" Content="Score: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Style="{DynamicResource Quicksand}" x:Name="lblTime" Width="500" Content="Time: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             <!--<Image Width="200" Height="200" Source="/Resources/placeholder1.png" />-->
-            <Label x:Name="lblTimeNow" Width="500" Content="TimeNow: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Style="{DynamicResource Quicksand}" x:Name="lblTimeNow" Width="500" Content="TimeNow: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
         </StackPanel>
         <StackPanel Grid.Row="2">
@@ -32,9 +43,9 @@
                      Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Accept_Click">
 
             </Button>
-            <Button x:Name="Start" Height="40" Width="150"  Content="Start" 
+            <Button  x:Name="Start" Height="40" Width="150"  Content="Start" 
                     Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Start_Click">
-                
+
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
@@ -45,8 +56,8 @@
 
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Name="lblTxt" FontSize="100" Content="Kliknij start" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Style="{DynamicResource Quicksand}" Name="lblTxt" FontSize="100" Content="Kliknij start" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>

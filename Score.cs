@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace Geek
 {
     class Score
-    {
+    {   
+
         public int points { get; set; }
         public DateTime time { get; set; }
 
         public double mulip { get; set; }
-
+        
         public double result { get; set; }
     }
 }
