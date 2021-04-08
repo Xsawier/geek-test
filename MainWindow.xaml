@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Geek"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" MinHeight="1080" MinWidth="1920"  WindowStartupLocation="CenterScreen" ResizeMode="CanResize" WindowState="Maximized" >
-    <Grid>
+    <Grid  Background="#326bed">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
@@ -14,12 +14,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Title" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075" Margin="0,5"/>
+            <Label Style="{DynamicResource Quicksand}" Content="Geek" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075" Margin="0,5"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
             <Label x:Name="lblScore" Width="500" Content="Score: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             <Label x:Name="lblTime" Width="500" Content="Time: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-            <!--<Image Width="200" Height="200" Source="/Icons/placeholder1.png" />-->
+            <!--<Image Width="200" Height="200" Source="/Resources/placeholder1.png" />-->
             <Label x:Name="lblTimeNow" Width="500" Content="TimeNow: 0" FontSize="75" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
         </StackPanel>
@@ -30,23 +30,23 @@
             <TextBox x:Name="tbResult" Height="40" Width="150" Margin="20 0 0 0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Button x:Name="Accept" Height="40" Width="150"  Content="Accept" Margin="640 0 10 0"
                      Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Accept_Click">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="#ec2075" Offset="0.0"/>
-                        <GradientStop Color="#f33944" Offset="0.50"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+
             </Button>
             <Button x:Name="Start" Height="40" Width="150"  Content="Start" 
                     Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Start_Click">
-                <Button.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                        <GradientStop Color="#ec2075" Offset="0.0"/>
-                        <GradientStop Color="#f33944" Offset="0.50"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+                
             </Button>
         </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Image x:Name="heart1" Height="100" Width="100" RenderOptions.BitmapScalingMode="Fant" Source="/Resources/heart.png" Margin="10"/>
+            <Image x:Name="heart2" Height="100" Width="100" RenderOptions.BitmapScalingMode="Fant" Source="/Resources/heart.png" Margin="10"/>
+            <Image x:Name="heart3" Height="100" Width="100" RenderOptions.BitmapScalingMode="Fant" Source="/Resources/heart.png" Margin="10"/>
 
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Name="lblTxt" FontSize="100" Content="Kliknij start" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        
     </Grid>
 </Window>

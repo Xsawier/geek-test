@@ -12,5 +12,7 @@ namespace Geek
         public DateTime time { get; set; }
 
         public double mulip { get; set; }
+
+        public double result { get; set; }
     }
 }
