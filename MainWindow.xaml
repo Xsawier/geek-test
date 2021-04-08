@@ -39,7 +39,9 @@
 
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <TextBox Style="{DynamicResource RoundedTextBox}" x:Name="tbResult" Height="40" Width="150" Margin="20 0 0 0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox  Style="{DynamicResource RoundedTextBox}" x:Name="tbResult" Height="40" Width="150" Margin="20 0 0 0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" KeyDown="OnKeyDown">
+                
+            </TextBox>
             <Button x:Name="Accept" Height="40" Width="150"  Content="Accept" Margin="640 0 10 0"
                      Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Accept_Click">
 
@@ -57,7 +59,7 @@
 
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Style="{DynamicResource Quicksand}" Name="lblTxt" FontSize="100" Content="Kliknij start" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Style="{DynamicResource Quicksand}" Name="lblTxt" FontSize="100" FontFamily="Qucicksand" Content="Kliknij start" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
 
     </Grid>

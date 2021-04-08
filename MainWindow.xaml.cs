@@ -83,23 +83,23 @@ namespace Geek
             if(!ongoingTask && !loosed)
             {
                 Random rnd = new Random();
-                double number1 = rnd.Next(-100,101);
-                double number2 = rnd.Next(-100, 101);
+                double number1 = rnd.Next(-10,11);
+                double number2 = rnd.Next(-10, 11);
                 int operation = rnd.Next(0, 4);
                 double result = 0;
                 switch (operation)
                 {
                     case 0:
                         result = number1 + number2;
-                        lblTxt.Content = number1 + " + " + number2 + " = " + result;
+                        lblTxt.Content = number1 + " + " + number2 + " = ";
                         break;
                     case 1:
                         result = number1 - number2;
-                        lblTxt.Content = number1 + " - " + number2 + " = " + result;
+                        lblTxt.Content = number1 + " - " + number2 + " = ";
                         break;
                     case 2:
                         result = number1 * number2;
-                        lblTxt.Content = number1 + " * " + number2 + " = " + result;
+                        lblTxt.Content = number1 + " * " + number2 + " = ";
                         break;
                     case 3:
                         while(number2 == 0)
@@ -107,7 +107,7 @@ namespace Geek
                             number2 = rnd.Next(-100, 101);
                         }
                         result = number1 / number2;
-                        lblTxt.Content = number1 + " / " + number2 + " = " + result;
+                        lblTxt.Content = number1 + " / " + number2 + " = ";
                         break;
                     default:
                         number2 = 1;
@@ -173,7 +173,7 @@ namespace Geek
             this.Close();
         }
 
-        /*private void OnKeyDown(object sender, KeyEventArgs e)
+        private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
@@ -207,7 +207,56 @@ namespace Geek
                     }
 
                 }
+                else
+                {
+                    if (loosed)
+                    {
+                        RestartGame();
+                    }
+                    if (!ongoingTask && !loosed)
+                    {
+                        Random rnd = new Random();
+                        double number1 = rnd.Next(-10, 11);
+                        double number2 = rnd.Next(-10, 11);
+                        int operation = rnd.Next(0, 4);
+                        double result = 0;
+                        switch (operation)
+                        {
+                            case 0:
+                                result = number1 + number2;
+                                lblTxt.Content = number1 + " + " + number2 + " = ";
+                                break;
+                            case 1:
+                                result = number1 - number2;
+                                lblTxt.Content = number1 + " - " + number2 + " = ";
+                                break;
+                            case 2:
+                                result = number1 * number2;
+                                lblTxt.Content = number1 + " * " + number2 + " = ";
+                                break;
+                            case 3:
+                                while (number2 == 0)
+                                {
+                                    number2 = rnd.Next(-100, 101);
+                                }
+                                result = number1 / number2;
+                                lblTxt.Content = number1 + " / " + number2 + " = ";
+                                break;
+                            default:
+                                number2 = 1;
+                                break;
+
+                        }
+                        score.result = result;
+                        ongoingTask = true;
+                        DateTime dateTime = DateTime.Now;
+                        score.time = dateTime;
+                        timer.Tick += new EventHandler(UpedateTimer_Tick);
+                        timer.Interval = new TimeSpan(0, 0, 1);
+                        timer.Start();
+                    }
+                }
             }
-        }*/
+        }
     }
 }
