@@ -168,6 +168,11 @@ namespace Geek
             }
         }
 
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         /*private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

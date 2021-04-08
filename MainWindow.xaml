@@ -20,10 +20,11 @@
         <StackPanel Orientation="Horizontal" Width="1920" Grid.Row="0"  HorizontalAlignment="Right" VerticalAlignment="Center">
 
             <Label Margin="10 0 0 0" Style="{DynamicResource Quicksand}" Content="Geek" FontSize="70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ec2075"/>
-            <Button Style="{DynamicResource ButtonRound}" Margin="1660 0 0 0" Width="50" Height="50" BorderBrush="#00707070" Foreground="#00707070">
+            <Button x:Name="ExitButton" Style="{DynamicResource ExitButtonOpacity}" Click="ExitClick" Margin="1660 0 0 0" Width="50" Height="50" BorderBrush="Transparent">
                 <Button.Background>
-                    <ImageBrush ImageSource="Resources/cancel.png" Stretch="Uniform" />
+                    <ImageBrush ImageSource="Resources/cancel.png" TileMode="Tile" Stretch="Uniform" Opacity="0.498"/>
                 </Button.Background>
+
             </Button>
         </StackPanel>
 
@@ -38,7 +39,7 @@
 
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <TextBox x:Name="tbResult" Height="40" Width="150" Margin="20 0 0 0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Style="{DynamicResource RoundedTextBox}" x:Name="tbResult" Height="40" Width="150" Margin="20 0 0 0" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Button x:Name="Accept" Height="40" Width="150"  Content="Accept" Margin="640 0 10 0"
                      Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}" Click="Accept_Click">
 
